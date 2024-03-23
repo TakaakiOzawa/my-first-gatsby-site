@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import {
     container,
     heading,
@@ -24,7 +25,12 @@ const Layout = ({ pageTitle, children }) => {
 
     return (
         <div className={container}>
-            <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+            <header>
+                <StaticImage
+                    alt="Kagegonomi header image 1"
+                    src="../images/20240323002.png"
+                />
+            </header>
             <nav>
                 <ul className={navLinks}>
                     <li className={navLinkItem}>
