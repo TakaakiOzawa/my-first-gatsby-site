@@ -2,6 +2,7 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
+import '../styles/global.css'
 
 const IndexPage = () => {
     return (
@@ -10,6 +11,9 @@ const IndexPage = () => {
                 alt="Kagegonomi TOP image 1"
                 src="../images/20240323001.png"
             />
+            <div className="bg-blue-500 text-white p-4">
+                This is a styled component using Tailwind CSS.
+            </div>
             <p>サイト構成</p>
             <p>複数ページに分岐するのではなく、Index1枚でなるべく完結するように</p>
             <p>ページ分岐はBackNumber,News,※Blogくらい？</p>
