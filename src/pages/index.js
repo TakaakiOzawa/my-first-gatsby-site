@@ -7,10 +7,61 @@ import '../styles/global.css'
 const IndexPage = () => {
     return (
         <Layout pageTitle="Index">
-            <StaticImage
-                alt="Kagegonomi TOP image 1"
-                src="../images/20240323001.png"
-            />
+            <div className="relative">
+                <StaticImage
+                    alt="Kagegonomi TOP image"
+                    src="../images/Kagegonomi_top.jpg"
+                    className="w-full"
+                />
+                <div className="absolute w-96 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <StaticImage
+                        alt="Kagegonomi TOP Logo image"
+                        src="../images/Kagegonomi_logo_2.png"
+                        className="w-full h-full transform -skew-y-12"
+                    />
+                </div>
+                <div className="absolute w-96 mt-16 ml-4 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <StaticImage
+                        alt="IkebukuroFM TOP image"
+                        src="../images/IkebukuroFM_top.png"
+                        className="w-full h-full transform -skew-y-12"
+                    />
+                </div>
+            </div>
+            <div className="relative">
+                <StaticImage
+                    alt="Kagegonomi ABOUT image"
+                    src="../images/Kagegonomi_about.jpg"
+                    className="w-full"
+                />
+                <div className="absolute inset-0 flex items-center justify-center text-white">
+                    ABOUT
+                    <br/>
+                    人気パーソナリティー「DJ浅い人間」が、<br/>
+                    毎週土曜深夜24時から池袋FMより<br/>
+                    根暗な独身の日頃の鬱憤を代弁する激動の30分！<br/>
+                </div>
+            </div>
+            <div className="relative">
+                <StaticImage
+                    alt="Kagegonomi PROFILE image"
+                    src="../images/okumono_tulip17.png"
+                    className="w-full"
+                />
+                <div className="absolute inset-0 flex items-center justify-center text-white">
+                    PARSONALITY
+                    <div className="avatar">
+                        <div className="w-24 rounded-full">
+                            <StaticImage
+                                alt="Kagegonomi DJ AsaiNingen image"
+                                src="../images/Kagegonomi_DJ_AsaiNingen_up.jpg"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div className="bg-blue-500 text-white p-4">
                 This is a styled component using Tailwind CSS.
             </div>
