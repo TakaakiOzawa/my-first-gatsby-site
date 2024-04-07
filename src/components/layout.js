@@ -34,7 +34,7 @@ const Layout = ({ pageTitle, children }) => {
                             <StaticImage
                                 alt="Kagegonomi Logo 1"
                                 src="../images/Kagegonomi_logo.png"
-                                height="30"
+                                height={30}
                             />
                         </div>
                         <div className="flex-none">
@@ -51,8 +51,9 @@ const Layout = ({ pageTitle, children }) => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-                    <li><a>Sidebar Item 1</a></li>
-                    <li><a>Sidebar Item 2</a></li>
+                    <li><a>TOP</a></li>
+                    <li><a>ABOUT</a></li>
+                    <li><a>LATEST CHAPTER</a></li>
                 </ul>
             </div>
         </div>
