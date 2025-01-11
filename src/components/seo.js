@@ -14,9 +14,18 @@ const Seo = ({ title }) => {
         `
     )
 
-    return (
-        <title>{title} | {data.site.siteMetadata.title}</title>
-    )
+    if (title == "TOP")
+    {
+        return (
+            <title>{data.site.siteMetadata.title}</title>
+        )
+    }
+    else
+    {
+        return (
+            <title>{title} | {data.site.siteMetadata.title}</title>
+        )
+    }
 }
 
 export default Seo

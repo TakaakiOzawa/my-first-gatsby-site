@@ -1,10 +1,11 @@
 import * as React from 'react'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
 import '../styles/global.css'
 
-const IndexPage = () => {
+const IndexPage = ( { data } ) => {
     return (
         <Layout pageTitle="Index">
             <div className="relative">
@@ -13,24 +14,54 @@ const IndexPage = () => {
                     src="../images/Kagegonomi_top.jpg"
                     className="w-full"
                 />
-                <div className="absolute w-96 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute top-[7.5%] px-4">
                     <StaticImage
-                        alt="Kagegonomi TOP Logo image"
+                        alt="Kagegonomi string image"
                         src="../images/Kagegonomi_logo_2.png"
-                        className="w-full h-full transform -skew-y-12"
+                        className="w-full max-w-screen-sm mx-auto"
                     />
                 </div>
-                <div className="absolute w-96 mt-16 ml-4 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute top-[32%] left-4 px-4">
                     <StaticImage
-                        alt="IkebukuroFM TOP image"
-                        src="../images/IkebukuroFM_top.png"
-                        className="w-full h-full transform -skew-y-12"
+                        alt="Kagegonomi subtitle string image"
+                        src="../images/subtitle_5d.png"
+                        className="w-full max-w-screen-sm mx-auto"
                     />
                 </div>
-                <div className="absolute w-96 top-3/4">
-                    <button className="btn btn-accent">池袋FM視聴リンク</button>
-                    <button className="btn glass">番組への投稿フォーム</button>
+                <div className="absolute bottom-28 px-4">
+                    <StaticImage
+                        alt="IkebukuroFM string image"
+                        src="../images/ikebukurofm_5d.png"
+                        className="w-full max-w-screen-sm mx-auto"
+                    />
                 </div>
+                <div className="absolute left-8 bottom-20 px-4">
+                    <StaticImage
+                        alt="Housou youbi jikan string image"
+                        src="../images/jikan_5d.png"
+                        className="w-full max-w-screen-sm mx-auto"
+                    />
+                </div>
+                <div className="absolute bottom-2 right-4 flex gap-4 p-2">
+                    <a href="https://x.com/kagegonomi" target="_blank" rel="noopener noreferrer">
+                        <StaticImage
+                            alt="X logo"
+                            src="../images/x_logo.png"
+                            className="w-16 h-16"
+                        />
+                    </a>
+                    <a href="https://note.com/kagegonomi/" target="_blank" rel="noopener noreferrer">
+                        <StaticImage
+                            alt="X logo"
+                            src="../images/note_logo.png"
+                            className="w-16 h-16"
+                        />
+                    </a>
+                </div>
+            </div>
+            <div className="grid grid-cols-2">
+                <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-info rounded-none no-animation w-full">池袋FM視聴リンク 📻</a>
+                <a href="https://t.co/P2kxaIgMmJ" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-error rounded-none no-animation w-full">番組への投稿フォーム 📧</a>
             </div>
             <div className="relative">
                 <StaticImage
@@ -48,7 +79,7 @@ const IndexPage = () => {
                 <div className="absolute mt-6 inset-0 flex items-center justify-center text-white">
                     人気パーソナリティー「DJ浅い人間」が、<br/>
                     毎週土曜深夜24時から池袋FMより<br/>
-                    根暗な独身の日頃の鬱憤を代弁する激動の30分！<br/>
+                    根暗な独身の鬱憤を代弁する激動の30分！<br/>
                 </div>
             </div>
             <div className="relative">
@@ -57,7 +88,7 @@ const IndexPage = () => {
                     src="../images/okumono_tulip15.png"
                     className="w-full"
                 />
-                <div className="absolute w-60 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute w-60 top-[20%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <StaticImage
                         alt="Kagegonomi PERSONALITY string"
                         src="../images/Kagegonomi_personality_string.png"
@@ -86,16 +117,16 @@ const IndexPage = () => {
                     src="../images/Kagegonomi_Latest_Chapter_back.png"
                     className="w-full"
                 />
-                <div className="absolute w-80 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute w-80 top-[20%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <StaticImage
                         alt="Kagegonomi LATEST CHAPTER string"
                         src="../images/Kagegonomi_latest_chapter_string.png"
                         className="w-full"
                     />
                 </div>
-                <div className="absolute mt-8 w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute mt-8 w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  px-4">
                     <iframe
-                        src="https://open.spotify.com/embed/show/621SiGP64AMkIrYT4I0loR?utm_source=generator"
+                        src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
                         width="100%"
                         height="152"
                         allowFullScreen
@@ -106,22 +137,62 @@ const IndexPage = () => {
             </div>
             <div className="relative">
                 <StaticImage
-                    alt="Kagegonomi X back image"
-                    src="../images/black_back.jpg"
+                    alt="Kagegonomi back image"
+                    src="../images/white_back.jpg"
                     className="w-full"
                 />
-                {/* <div className="absolute">
-                    <a className="twitter-timeline" href="https://twitter.com/kagegonomi?ref_src=twsrc%5Etfw">Tweets by kagegonomi</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div> */}
+                <div className="absolute w-60 top-[12.5%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <StaticImage
+                        alt="Kagegonomi WHAT'S NEW string"
+                        src="../images/Kagegonomi_whatsnew_string.png"
+                        className="w-full"
+                    />
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="max-w-4xl w-full mx-auto px-4">
+                        {data.allMdx.nodes.map((node) => (
+                            <Link
+                                to={`/contents/${node.frontmatter.slug}`}
+                                key={node.id}
+                                className="block p-4 border-b border-gray-300 hover:bg-gray-100 transition duration-300"
+                            >
+                                <article key={node.id}>
+                                    <p className="text-blue-600 text-sm font-bold mb-2">{node.frontmatter.date}</p>
+                                    <p className="text-base font-bold">{node.frontmatter.title}</p>
+                                </article>
+                            </Link>
+                        ))}
+                    </div>
+                    <Link
+                        to={`/contents`}
+                        className="absolute bottom-[2.5%] right-6 w-36 btn btn-outline"
+                    >
+                        MORE
+                    </Link>
+                </div>
             </div>
-
             <div className="text-sm bg-[#facc15] text-black p-4">
-                Copyright © 2024 Kagegonomi All Rights Reserved.
+                Copyright © 2025 Kagegonomi All Rights Reserved.
             </div>
         </Layout>
     )
 }
 
-export const Head = () => <Seo title="Home Page" />
+export const query = graphql`
+    query {
+        allMdx(sort: {frontmatter: {date: DESC}}, limit: 3) {
+            nodes {
+                frontmatter {
+                    date(formatString: "YYYY.MM.DD")
+                    title
+                    slug
+                }
+                id
+            }
+        }
+    }
+`
+
+export const Head = () => <Seo title="TOP" />
 
 export default IndexPage

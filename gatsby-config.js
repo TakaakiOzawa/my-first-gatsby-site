@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `My First Gatsby Site`,
+    title: `カゲゴノミ`,
   },
   plugins: [
     "gatsby-plugin-image",
@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
+        name: `content`,
+        path: `${__dirname}/contents`,
       }
     },
     "gatsby-plugin-mdx",
