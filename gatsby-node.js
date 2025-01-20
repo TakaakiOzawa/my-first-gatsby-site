@@ -5,18 +5,33 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
         query {
-            allMdx(sort: { frontmatter: { date: DESC } }) {
-                nodes {
-                    id
-                    frontmatter {
-                        slug
+            allMicrocmsContents {
+                edges {
+                    node {
+                        id
+                        title
+                        createdAt(formatString: "YYYY.MM.DD")
+                        category {
+                            id
+                            name
+                        }
                     }
                 }
             }
         }
     `);
 
-    const posts = result.data.allMdx.nodes;
+    result.data.allMicrocmsContents.edges.forEach(({ node }) => {
+        createPage({
+            path: `/contents/${node.id}`,
+            component: path.resolve(`./src/templates/content-detail.js`),
+            context: {
+                id: node.id,
+            },
+        });
+    });
+
+    const posts = result.data.allMicrocmsContents.edges;
     const postsPerPage = 10;
     const numPages = Math.ceil(posts.length / postsPerPage);
 

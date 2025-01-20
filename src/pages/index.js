@@ -150,15 +150,15 @@ const IndexPage = ( { data } ) => {
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="max-w-4xl w-full mx-auto px-4">
-                        {data.allMdx.nodes.map((node) => (
+                        {data.allMicrocmsContents.edges.map((node) => (
                             <Link
-                                to={`/contents/${node.frontmatter.slug}`}
-                                key={node.id}
+                                to={`/contents/${node.node.id}`}
+                                key={node.node.id}
                                 className="block p-4 border-b border-gray-300 hover:bg-gray-100 transition duration-300"
                             >
-                                <article key={node.id}>
-                                    <p className="text-blue-600 text-sm font-bold mb-2">{node.frontmatter.date}</p>
-                                    <p className="text-base font-bold">{node.frontmatter.title}</p>
+                                <article key={node.node.id}>
+                                    <p className="text-blue-600 text-sm font-bold mb-2">{node.node.createdAt}</p>
+                                    <p className="text-base font-bold">{node.node.title}</p>
                                 </article>
                             </Link>
                         ))}
@@ -180,14 +180,17 @@ const IndexPage = ( { data } ) => {
 
 export const query = graphql`
     query {
-        allMdx(sort: {frontmatter: {date: DESC}}, limit: 3) {
-            nodes {
-                frontmatter {
-                    date(formatString: "YYYY.MM.DD")
+        allMicrocmsContents(sort: { createdAt: DESC }, limit: 3) {
+            edges {
+                node {
+                    id
                     title
-                    slug
+                    createdAt(formatString: "YYYY.MM.DD")
+                    category {
+                        id
+                        name
+                    }
                 }
-                id
             }
         }
     }

@@ -18,5 +18,17 @@ module.exports = {
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
     'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-source-microcms',
+      options: {
+        apiKey: 'Ot6fTSrQkiLC5P01iRJFGzE6GRoowxHMSwFe',
+        serviceId: 'kagegonomitest',
+        apis: [
+          {
+            endpoint: 'contents',
+          },
+        ],
+      },
+    },
   ],
 }
