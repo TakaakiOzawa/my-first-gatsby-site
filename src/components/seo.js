@@ -14,7 +14,7 @@ const Seo = ({ title }) => {
         `
     )
 
-    if (title == "TOP")
+    if (title === "TOP")
     {
         return (
             <title>{data.site.siteMetadata.title}</title>

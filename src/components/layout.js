@@ -1,29 +1,8 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import {
-    container,
-    heading,
-    navLinks,
-    navLinkItem,
-    navLinkText,
-    siteTitle,
-} from './layout.module.css'
 import '../styles/global.css'
 
-const Layout = ({ pageTitle, children }) => {
-    const data = useStaticQuery (
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                    }
-                }
-            }
-        `
-    )
-
+const Layout = ({ children }) => {
     return (
         <div className="drawer drawer-end">
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />

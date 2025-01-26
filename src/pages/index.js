@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
@@ -127,6 +127,7 @@ const IndexPage = ( { data } ) => {
                 <div className="absolute mt-8 w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  px-4">
                     <iframe
                         src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
+                        title="Latest Video"
                         width="100%"
                         height="152"
                         allowFullScreen

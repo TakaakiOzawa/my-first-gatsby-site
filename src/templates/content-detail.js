@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import Seo from '../components/seo'
 
 const ContentDetail = ({ data }) => {
-    const { title, createdAt, category } = data.microcmsContents;
+    const { title, createdAt, category, content } = data.microcmsContents;
 
     return (
         <Layout pageTitle={title}>
@@ -12,6 +12,10 @@ const ContentDetail = ({ data }) => {
                 <h1 className="text-2xl font-bold">{title}</h1>
                 <p className="text-gray-600">{createdAt}</p>
                 {category && <p className="text-blue-500">{category.name}</p>}
+                <div
+                    className="prose prose-sm lg:prose-lg"
+                    dangerouslySetInnerHTML={{ __html: content }}
+                />
             </div>
             <div className="text-sm bg-[#facc15] text-black p-4">
                 Copyright © 2025 Kagegonomi All Rights Reserved.
@@ -28,6 +32,7 @@ export const query = graphql`
             category {
                 name
             }
+            content
         }
     }
 `;
