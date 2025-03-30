@@ -12,7 +12,7 @@ const IndexPage = ( { data } ) => {
             <section className="relative">
                 <StaticImage
                     src="../images/kagegonomi_mainvisual_temp.png"
-                    alt="Kagegonomi main visual"
+                    alt="kagegonomi main visual"
                     layout="fullWidth"
                     placeholder="blurred"
                     className="w-full h-auto"
@@ -22,11 +22,14 @@ const IndexPage = ( { data } ) => {
                 </div>
             </section>
             {/*WHAT'S NEW*/}
-            <section className="relative pt-[100px] pb-[80px]" id="whats_new">
-                <h2 className="text-center mb-[82px]">
+            <section className="relative pt-[100px] pb-[100px]" id="whats_new">
+                <h2 className="text-center mb-[80px]">
                     <StaticImage
                         src="../images/head_whatsnew.png"
                         alt="WHAT'S NEW | 新着情報"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
                     />
                 </h2>
                 <div className="w-[1080px] mx-auto">
@@ -56,24 +59,84 @@ const IndexPage = ( { data } ) => {
                     </div>
                 </div>
             </section>
-            {/*LATEST CHAPTER*/}
-            <section className="relative pt-[100px] pb-[80px]" id="latest_chapter">
-                <h2 className="text-center mb-[82px]">
+            {/*LATEST EPISODE*/}
+            <section className="h-[800px] pt-[100px] bg-[url('../images/bg_latest_episode.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="latest_episode">
+                <h2 className="text-center mb-[80px]">
                     <StaticImage
-                        src="../images/head_latestchapter.png"
-                        alt="LATEST CHAPTER | 最新回"
+                        src="../images/head_latestepisode.png"
+                        alt="LATEST EPISODE | 最新回"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
                     />
                 </h2>
-                <div className="w-[1080px] mx-auto">
-                    <iframe
-                        src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
-                        title="latest chapter"
-                        width="100%"
-                        height="152"
-                        allowFullScreen
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"
-                    ></iframe>
+                <div className="relative w-[960px] mx-auto">
+                    <div className="relative w-[800px] mx-auto">
+                        <iframe
+                            src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
+                            title="latest episode"
+                            width="100%"
+                            height="400"
+                            allowFullScreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
+            <div className="h-[600px] bg-[url('../images/bg1.jpg')] bg-no-repeat bg-center bg-fixed bg-cover"></div>
+            {/*ABOUT*/}
+            <section className="h-[800px] pt-[100px] bg-[url('../images/bg_about.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="about">
+                <h2 className="text-center mb-[82px]">
+                    <StaticImage
+                        src="../images/head_about.png"
+                        alt="ABOUT | カゲゴノミとは"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
+                    />
+                </h2>
+                <div className="relative w-[960px] mx-auto">
+                    <div>
+                        <p className="text-[18px] block pt-[14px] text-[#fff]">
+                            お前ら、年収はいくらだ？500万？ハッ笑わせるなぁ、これだから貧乏人との会話は止められないよ。たった500万じゃあ、幸せどころか不幸せも買えないんじゃないかぁ？光進丸の模型売ってやるからあっちいけよ。
+                        </p>
+                    </div>
+                </div>
+            </section>
+            {/*PARSONALITY*/}
+            <section className="relative pt-[100px] pb-[80px]" id="parsonality">
+                <h2 className="text-center mb-[80px]">
+                    <StaticImage
+                        src="../images/head_parsonality.png"
+                        alt="PARSONALITY | パーソナリティー"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
+                    />
+                </h2>
+                <div className="relative w-[1280px] mx-auto">
+                    <div className="table w-full pb-[80px]">
+                        <div className="table-cell align-top w-1/2">
+                            <StaticImage
+                                src="../images/pct_parsonality.jpg"
+                                alt="dj_asainingen"
+                                layout="fullWidth"
+                                placeholder="blurred"
+                                className="w-full h-auto"
+                            />
+                        </div>
+                        <div className="table-cell align-top pl-[60px]">
+                            <h3 className="block text-[28px] mb-[26px] my-[1em] mx-0 font-bold">
+                                DJ浅い人間
+                            </h3>
+                            <div className="pr-[90px]">
+                                <p className="text-[18px] block pt-[14px]">
+                                    誰が登ってよいと言った？お前らの仕事はなあ、船底にこびり付いたフジツボの除去だ。息が続かなくなったら皆の邪魔にならないよう、そっと海底に沈め。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </Layout>
