@@ -17,9 +17,6 @@ const ContentDetail = ({ data }) => {
                     dangerouslySetInnerHTML={{ __html: content }}
                 />
             </div>
-            <div className="text-sm bg-[#facc15] text-black p-4">
-                Copyright © 2025 Kagegonomi All Rights Reserved.
-            </div>
         </Layout>
     );
 };

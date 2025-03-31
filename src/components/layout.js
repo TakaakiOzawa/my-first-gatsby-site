@@ -39,6 +39,9 @@ const Layout = ({ children }) => {
                 <main>
                     {children}
                 </main>
+                <div className="text-sm bg-yellow-500 text-black p-4">
+                    Copyright © 2025 Kagegonomi All Rights Reserved.
+                </div>
             </div>
             <div className="drawer-side z-[999]">
                 <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
