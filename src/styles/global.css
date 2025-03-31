@@ -6,6 +6,7 @@
 @layer base {
     html {
         @apply relative min-h-full;
+        scroll-behavior: smooth;
     }
 
     body {
