@@ -22,10 +22,10 @@ const Layout = ({ children }) => {
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
-                            <li><a href="#whats_new">WHAT'S NEW</a></li>
-                            <li><a href="#latest_episode">LATEST CHAPTER</a></li>
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#parsonality">PARSONALITY</a></li>
+                            <li><a href="/#whats_new">WHAT'S NEW</a></li>
+                            <li><a href="/#latest_episode">LATEST CHAPTER</a></li>
+                            <li><a href="/#about">ABOUT</a></li>
+                            <li><a href="/#parsonality">PARSONALITY</a></li>
                         </ul>
                     </div>
                     <div className="navbar-end">
