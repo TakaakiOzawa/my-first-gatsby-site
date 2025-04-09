@@ -14,9 +14,9 @@ const ContentsList = ({ data, pageContext }) => {
 
     return (
         <Layout pageTitle="WHAT'S NEW">
-            <div className="py-18">
+            <div className="py-16">
                 <section>
-                    <h2 className="text-center mt-28">
+                    <h2 className="text-center mt-20">
                         <StaticImage
                             src="../images/head_whatsnew.png"
                             alt="WHAT'S NEW | 新着情報"
