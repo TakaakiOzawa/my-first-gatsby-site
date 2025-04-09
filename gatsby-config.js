@@ -6,6 +6,12 @@ module.exports = {
     title: `カゲゴノミ`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/favicon.png`,
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
