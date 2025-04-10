@@ -2,9 +2,10 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import Seo from '../components/seo'
+import ShareButtonList from '../components/shareButtonList'
 
 const ContentDetail = ({ data }) => {
-    const { title, createdAt, category, content } = data.microcmsContents;
+    const { id, title, createdAt, category, content } = data.microcmsContents;
 
     return (
         <Layout pageTitle={title}>
@@ -21,7 +22,8 @@ const ContentDetail = ({ data }) => {
                                 {title}
                             </h3>
                         </div>
-                        <div className="mb-12 border-b border-gray-300" />
+                        <div className="text-right mb-2 border-b border-gray-300" />
+                        <ShareButtonList title={title} id={id} />
                         {/*{category && <p className="text-blue-500">{category.name}</p>}*/}
                         <div
                             className="prose prose-sm lg:prose-lg"
@@ -37,6 +39,7 @@ const ContentDetail = ({ data }) => {
 export const query = graphql`
     query($id: String!) {
         microcmsContents(id: { eq: $id }) {
+            id
             title
             createdAt(formatString: "YYYY.MM.DD")
             category {
