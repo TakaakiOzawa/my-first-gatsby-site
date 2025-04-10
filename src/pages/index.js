@@ -10,6 +10,11 @@ const IndexPage = ( { data } ) => {
         <Layout pageTitle="Index">
             {/*MAIN VISUAL*/}
             <section className="relative">
+                <h1>
+                    <div className="hidden">
+                        カゲゴノミ
+                    </div>
+                </h1>
                 <StaticImage
                     src="../images/kagegonomi_mainvisual_temp.png"
                     alt="kagegonomi main visual"
@@ -17,8 +22,30 @@ const IndexPage = ( { data } ) => {
                     placeholder="blurred"
                     className="w-full h-auto"
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    {/* タイトル画像など */}
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-24 flex flex-row items-center">
+                    <StaticImage
+                        src="../images/ikebukurofm.png"
+                        alt="ikebukurofm"
+                        layout="fixed"
+                        placeholder="blurred"
+                        height={40}
+                    />
+                    <StaticImage
+                        src="../images/datetime.png"
+                        alt="datetime"
+                        layout="fixed"
+                        placeholder="blurred"
+                        height={40}
+                    />
+                </div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-16">
+                    <StaticImage
+                        src="../images/title_kagegonomi.png"
+                        alt="kagegonomi title"
+                        layout="fixed"
+                        placeholder="blurred"
+                        height={160}
+                    />
                 </div>
             </section>
             {/*WHAT'S NEW*/}
