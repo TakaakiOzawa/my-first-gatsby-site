@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
                                 alt="Kagegonomi Logo"
                                 layout="fixed"
                                 height={40}
+                                loading="eager"
                                 className="block mx-auto"
                             />
                         </Link>
