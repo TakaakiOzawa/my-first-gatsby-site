@@ -20,6 +20,7 @@ const IndexPage = ( { data } ) => {
                     alt="kagegonomi main visual"
                     layout="fullWidth"
                     placeholder="blurred"
+                    quality={90}
                     className="w-full h-auto"
                 />
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-24 flex flex-row items-center">
