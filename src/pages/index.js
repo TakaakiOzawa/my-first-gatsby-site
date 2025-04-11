@@ -28,6 +28,7 @@ const IndexPage = ( { data } ) => {
                         src="../images/ikebukurofm.png"
                         alt="ikebukurofm"
                         layout="fixed"
+                        loading="eager"
                         placeholder="blurred"
                         height={40}
                     />
@@ -35,6 +36,7 @@ const IndexPage = ( { data } ) => {
                         src="../images/datetime.png"
                         alt="datetime"
                         layout="fixed"
+                        loading="eager"
                         placeholder="blurred"
                         height={40}
                     />
@@ -44,6 +46,7 @@ const IndexPage = ( { data } ) => {
                         src="../images/title_kagegonomi.png"
                         alt="kagegonomi title"
                         layout="fixed"
+                        loading="eager"
                         placeholder="blurred"
                         height={160}
                     />
