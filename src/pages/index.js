@@ -1,11 +1,26 @@
-import * as React from 'react'
+import React, { useEffect, useState } from "react"
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
 import '../styles/global.css'
 
-const IndexPage = ( { data } ) => {
+const IndexPage = ({ data }) => {
+    const [isOnair, setIsOnair] = useState(false)
+
+    useEffect(() => {
+        const now = new Date()
+        const day = now.getDay()
+        const hour = now.getHours()
+        const minute = now.getMinutes()
+
+        if (day === 0 && hour === 0 && minute < 30) {
+            setIsOnair(true)
+        } else {
+            setIsOnair(false)
+        }
+    }, [])
+
     return (
         <Layout pageTitle="Index">
             {/*MAIN VISUAL*/}
@@ -51,10 +66,44 @@ const IndexPage = ( { data } ) => {
                         height={160}
                     />
                 </div>
+                <div className="absolute bottom-0 left-0 mb-20 ml-56">
+                    {isOnair ? (
+                        <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/onair.png"
+                                alt="onair"
+                                layout="fixed"
+                                placeholder="blurred"
+                                height={320}
+                            />
+                        </a>
+                    ) : (
+                        <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/offair.png"
+                                alt="offair"
+                                layout="fixed"
+                                placeholder="blurred"
+                                height={320}
+                            />
+                        </a>
+                    )}
+                </div>
+                <div className="absolute top-0 right-0 mt-36 mr-52">
+                    <a href="https://t.co/9lxTcR3Dp7" target="_blank" rel="noopener noreferrer">
+                        <StaticImage
+                            src="../images/otayori.png"
+                            alt="otayori"
+                            layout="fixed"
+                            placeholder="blurred"
+                            height={180}
+                        />
+                    </a>
+                </div>
             </section>
             {/*WHAT'S NEW*/}
-            <section className="relative pt-[100px] pb-[100px]" id="whats_new">
-                <h2 className="text-center mb-[80px]">
+            <section className="relative pt-24 pb-24" id="whats_new">
+                <h2 className="text-center mb-16">
                     <StaticImage
                         src="../images/head_whatsnew.png"
                         alt="WHAT'S NEW | 新着情報"
@@ -91,8 +140,8 @@ const IndexPage = ( { data } ) => {
                 </div>
             </section>
             {/*LATEST EPISODE*/}
-            <section className="h-[800px] pt-[100px] bg-[url('../images/bg_latest_episode.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="latest_episode">
-                <h2 className="text-center mb-[80px]">
+            <section className="h-[800px] pt-24 bg-[url('../images/bg_latest_episode.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="latest_episode">
+                <h2 className="text-center mb-16">
                     <StaticImage
                         src="../images/head_latestepisode.png"
                         alt="LATEST EPISODE | 最新回"
@@ -117,8 +166,8 @@ const IndexPage = ( { data } ) => {
             </section>
             <div className="h-[600px] bg-[url('../images/bg1.jpg')] bg-no-repeat bg-center bg-fixed bg-cover"></div>
             {/*ABOUT*/}
-            <section className="h-[800px] pt-[100px] bg-[url('../images/bg_about.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="about">
-                <h2 className="text-center mb-[82px]">
+            <section className="h-[800px] pt-24 bg-[url('../images/bg_about.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="about">
+                <h2 className="text-center mb-20">
                     <StaticImage
                         src="../images/head_about.png"
                         alt="ABOUT | カゲゴノミとは"
@@ -129,15 +178,15 @@ const IndexPage = ( { data } ) => {
                 </h2>
                 <div className="relative w-[960px] mx-auto">
                     <div>
-                        <p className="text-[18px] block pt-[14px] text-[#fff]">
+                        <p className="text-lg block pt-4 text-[#fff]">
                             お前ら、年収はいくらだ？500万？ハッ笑わせるなぁ、これだから貧乏人との会話は止められないよ。たった500万じゃあ、幸せどころか不幸せも買えないんじゃないかぁ？光進丸の模型売ってやるからあっちいけよ。
                         </p>
                     </div>
                 </div>
             </section>
             {/*PARSONALITY*/}
-            <section className="relative pt-[100px] pb-[80px]" id="parsonality">
-                <h2 className="text-center mb-[80px]">
+            <section className="relative pt-24 pb-20" id="parsonality">
+                <h2 className="text-center mb-16">
                     <StaticImage
                         src="../images/head_parsonality.png"
                         alt="PARSONALITY | パーソナリティー"
@@ -147,7 +196,7 @@ const IndexPage = ( { data } ) => {
                     />
                 </h2>
                 <div className="relative w-[1280px] mx-auto">
-                    <div className="table w-full pb-[80px]">
+                    <div className="table w-full pb-20">
                         <div className="table-cell align-top w-1/2">
                             <StaticImage
                                 src="../images/pct_parsonality.jpg"
@@ -157,12 +206,12 @@ const IndexPage = ( { data } ) => {
                                 className="w-full h-auto"
                             />
                         </div>
-                        <div className="table-cell align-top pl-[60px]">
-                            <h3 className="block text-[28px] mb-[26px] my-[1em] mx-0 font-bold">
+                        <div className="table-cell align-top pl-16">
+                            <h3 className="block text-3xl mb-6 my-[1em] mx-0 font-bold">
                                 DJ浅い人間
                             </h3>
-                            <div className="pr-[90px]">
-                                <p className="text-[18px] block pt-[14px]">
+                            <div className="pr-24">
+                                <p className="text-lg block pt-3">
                                     誰が登ってよいと言った？お前らの仕事はなあ、船底にこびり付いたフジツボの除去だ。息が続かなくなったら皆の邪魔にならないよう、そっと海底に沈め。
                                 </p>
                             </div>
