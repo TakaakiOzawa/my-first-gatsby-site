@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import '../styles/global.css'
 
 const Layout = ({ children }) => {
     return (
