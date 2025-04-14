@@ -24,7 +24,8 @@ const Layout = ({ children }) => {
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
                             <li><a href="/#whats_new">WHAT'S NEW</a></li>
-                            <li><a href="/#latest_episode">LATEST CHAPTER</a></li>
+                            <li><a href="/#latest_episode">LATEST EPISODE</a></li>
+                            <li><a href="/#onair_notes">ON-AIR NOTES</a></li>
                             <li><a href="/#about">ABOUT</a></li>
                             <li><a href="/#parsonality">PARSONALITY</a></li>
                         </ul>
@@ -56,7 +57,7 @@ const Layout = ({ children }) => {
                                 if (drawerToggle) drawerToggle.checked = false;
                             }}
                         >
-                            <a href="#whats_new">WHAT'S NEW</a>
+                            <a href="/#whats_new">WHAT'S NEW</a>
                         </label>
                     </li>
                     <li>
@@ -68,7 +69,7 @@ const Layout = ({ children }) => {
                                 if (drawerToggle) drawerToggle.checked = false;
                             }}
                         >
-                            <a href="#latest_episode">LATEST CHAPTER</a>
+                            <a href="/#latest_episode">LATEST EPISODE</a>
                         </label>
                     </li>
                     <li>
@@ -80,7 +81,7 @@ const Layout = ({ children }) => {
                                 if (drawerToggle) drawerToggle.checked = false;
                             }}
                         >
-                            <a href="#about">ABOUT</a>
+                            <a href="/#onair_notes">ON-AIR NOTES</a>
                         </label>
                     </li>
                     <li>
@@ -92,7 +93,19 @@ const Layout = ({ children }) => {
                                 if (drawerToggle) drawerToggle.checked = false;
                             }}
                         >
-                            <a href="#parsonality">PARSONALITY</a>
+                            <a href="/#about">ABOUT</a>
+                        </label>
+                    </li>
+                    <li>
+                        <label
+                            htmlFor="my-drawer-4"
+                            className="cursor-pointer"
+                            onClick={() => {
+                                const drawerToggle = document.getElementById("my-drawer-4");
+                                if (drawerToggle) drawerToggle.checked = false;
+                            }}
+                        >
+                            <a href="/#parsonality">PARSONALITY</a>
                         </label>
                     </li>
                 </ul>

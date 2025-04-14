@@ -21,6 +21,20 @@ const IndexPage = ({ data }) => {
         }
     }, [])
 
+    useEffect(() => {
+        const scriptId = "note-embed-script"
+        if (!document.getElementById(scriptId)) {
+            const script = document.createElement("script")
+            script.id = scriptId
+            script.async = true
+            script.src = "https://note.com/scripts/embed.js"
+            document.body.appendChild(script)
+            return () => {
+                document.body.removeChild(script)
+            }
+        }
+    }, [])
+
     return (
         <Layout pageTitle="Index">
             {/*MAIN VISUAL*/}
@@ -31,9 +45,10 @@ const IndexPage = ({ data }) => {
                     </div>
                 </h1>
                 <StaticImage
-                    src="../images/kagegonomi_mainvisual_temp.png"
+                    src="../images/kagegonomi_mainvisual_temp.webp"
                     alt="kagegonomi main visual"
                     layout="fullWidth"
+                    loading="eager"
                     placeholder="blurred"
                     quality={90}
                     className="w-full h-auto"
@@ -73,8 +88,10 @@ const IndexPage = ({ data }) => {
                                 src="../images/onair.png"
                                 alt="onair"
                                 layout="fixed"
+                                loading="eager"
                                 placeholder="blurred"
                                 height={320}
+                                className="transition transform duration-300 hover:scale-110"
                             />
                         </a>
                     ) : (
@@ -83,8 +100,10 @@ const IndexPage = ({ data }) => {
                                 src="../images/offair.png"
                                 alt="offair"
                                 layout="fixed"
+                                loading="eager"
                                 placeholder="blurred"
                                 height={320}
+                                className="transition transform duration-300 hover:scale-110"
                             />
                         </a>
                     )}
@@ -95,8 +114,23 @@ const IndexPage = ({ data }) => {
                             src="../images/otayori.png"
                             alt="otayori"
                             layout="fixed"
+                            loading="eager"
                             placeholder="blurred"
                             height={180}
+                            className="transition transform duration-300 hover:scale-110"
+                        />
+                    </a>
+                </div>
+                <div className="absolute bottom-0 right-0 mb-16 mr-72">
+                    <a href="https://x.com/kagegonomi" target="_blank" rel="noopener noreferrer">
+                        <StaticImage
+                            src="../images/x_logo.png"
+                            alt="x"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={120}
+                            className="transition transform duration-300 hover:scale-110"
                         />
                     </a>
                 </div>
@@ -143,8 +177,8 @@ const IndexPage = ({ data }) => {
             <section className="h-[800px] pt-24 bg-[url('../images/bg_latest_episode.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="latest_episode">
                 <h2 className="text-center mb-16">
                     <StaticImage
-                        src="../images/head_latestepisode.png"
-                        alt="LATEST EPISODE | 最新回"
+                        src="../images/head_latestepisode.webp"
+                        alt="LATEST EPISODE | 最新エピソード"
                         height={60}
                         layout="fixed"
                         className="block mx-auto"
@@ -164,9 +198,62 @@ const IndexPage = ({ data }) => {
                     </div>
                 </div>
             </section>
+            {/*ON-AIR NOTES*/}
+            <section className="relative pt-24 pb-24 bg-[#DCE6E2]" id="onair_notes">
+                <h2 className="text-center mb-16">
+                    <StaticImage
+                        src="../images/head_onairnotes.png"
+                        alt="ON-AIR NOTES | 放送メモ"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
+                    />
+                </h2>
+                <div className="w-[1080px] mx-auto">
+
+                    <div className="table w-full pb-20">
+                        <div className="table-cell align-top w-1/2 pr-3">
+                            <iframe
+                                title="Media player"
+                                src="https://embed.music.apple.com/jp/playlist/%E3%82%AB%E3%82%B2%E3%82%B4%E3%83%8E%E3%83%9F%E3%81%AE%E6%B7%B1%E5%A4%9C%E9%9B%BB%E6%B3%A2-ed%E6%9B%B2-since2025-2-1/pl.u-e98lkq9heV826b?l=en-US&itscg=30200&itsct=music_box_player&ls=1&app=music&mttnsubad=pl.u-e98lkq9heV826b&theme=auto"
+                                id="embedPlayer"
+                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                allow="autoplay *; encrypted-media *; clipboard-write"
+                                style={{
+                                    border: "0px",
+                                    borderRadius: "12px",
+                                    width: "100%",
+                                    height: "450px",
+                                    maxWidth: "660px"
+                                }}
+                                height="450"
+                                width="100%"
+                            ></iframe>
+                        </div>
+                        <div className="table-cell align-top w-1/2 pl-3">
+                            <iframe
+                                className="note-embed"
+                                src="https://note.com/embed/notes/ncf0ac4bf869e"
+                                style={{
+                                    border: 0,
+                                    display: "block",
+                                    maxWidth: "99%",
+                                    width: "494px",
+                                    padding: "0px",
+                                    margin: "10px 0px",
+                                    position: "static",
+                                    visibility: "visible",
+                                }}
+                                height="400"
+                                title="Note embed"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <div className="h-[600px] bg-[url('../images/bg1.jpg')] bg-no-repeat bg-center bg-fixed bg-cover"></div>
             {/*ABOUT*/}
-            <section className="h-[800px] pt-24 bg-[url('../images/bg_about.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="about">
+            <section className="h-[800px] pt-24 bg-[url('../images/bg_about.webp')] bg-no-repeat bg-center bg-fixed bg-cover" id="about">
                 <h2 className="text-center mb-20">
                     <StaticImage
                         src="../images/head_about.png"
