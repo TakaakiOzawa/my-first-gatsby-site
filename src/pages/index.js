@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
-import '../styles/global.css'
 
 const IndexPage = ({ data }) => {
     const [isOnair, setIsOnair] = useState(false)
@@ -174,10 +173,10 @@ const IndexPage = ({ data }) => {
                 </div>
             </section>
             {/*LATEST EPISODE*/}
-            <section className="h-[800px] pt-24 bg-[url('../images/bg_latest_episode.jpg')] bg-no-repeat bg-center bg-fixed bg-cover" id="latest_episode">
+            <section className="h-[800px] pt-24 bg-[url('../images/bg_latest_episode.webp')] bg-no-repeat bg-center bg-fixed bg-cover" id="latest_episode">
                 <h2 className="text-center mb-16">
                     <StaticImage
-                        src="../images/head_latestepisode.webp"
+                        src="../images/head_latestepisode.png"
                         alt="LATEST EPISODE | 最新エピソード"
                         height={60}
                         layout="fixed"
