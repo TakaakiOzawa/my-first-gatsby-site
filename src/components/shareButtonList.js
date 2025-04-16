@@ -15,7 +15,7 @@ const ShareButtonList = ({ title, id }) => {
     const shareUrl = `https://kagegonomi.com/content/${id}`;
 
     return (
-        <div className="flex justify-end">
+        <div className="flex justify-end pb-2">
             <div className="pr-2">
                 <FacebookShareButton title={titleKagegonomi} url={shareUrl}>
                     <FacebookIcon size={32} round />

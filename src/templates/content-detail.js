@@ -5,28 +5,26 @@ import Seo from '../components/seo'
 import ShareButtonList from '../components/shareButtonList'
 
 const ContentDetail = ({ data }) => {
-    const { id, title, createdAt, category, content } = data.microcmsContents;
+    const { id, title, createdAt, content } = data.microcmsContents;
 
     return (
         <Layout pageTitle={title}>
-            <div className="container mx-auto px-4 py-[70px]">
+            <div className="container mx-auto px-4 py-16">
                 <section>
-                    <article className="min-h-screen py-12 px-12 text-[1.4rem]">
-                        <div className="mb-[6px]">
-                            <time className="text-blue-500 text-[0.9rem] font-bold antialiased">
+                    <article className="min-h-screen px-12 py-12 max-md:px-4 max-md:py-0 text-2xl">
+                        <div className="mb-1">
+                            <time className="text-blue-500 text-sm font-bold antialiased">
                                 {createdAt}
                             </time>
                         </div>
                         <div className="mb-4">
-                            <h3 className="text-[1.1rem] font-bold leading-[1.4]">
+                            <h3 className="text-sm md:text-lg font-bold">
                                 {title}
                             </h3>
                         </div>
-                        <div className="text-right mb-2 border-b border-gray-300" />
                         <ShareButtonList title={title} id={id} />
-                        {/*{category && <p className="text-blue-500">{category.name}</p>}*/}
                         <div
-                            className="prose prose-sm lg:prose-lg"
+                            className="prose prose-sm lg:prose-lg max-w-full"
                             dangerouslySetInnerHTML={{ __html: content }}
                         />
                     </article>
