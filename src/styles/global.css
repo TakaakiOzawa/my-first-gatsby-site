@@ -10,7 +10,7 @@
     }
 
     body {
-        @apply font-custom m-0 min-w-[960px] bg-white p-0 leading-loose text-[1.4rem] text-[#333];
+        @apply font-custom m-0 max-w-full bg-white p-0 leading-loose text-[1.4rem] text-[#333];
         -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
     }
