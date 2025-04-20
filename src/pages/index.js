@@ -38,271 +38,212 @@ const IndexPage = ({ data }) => {
     return (
         <Layout pageTitle="Index">
             {/*MAIN VISUAL*/}
-            <section className="relative">
+            <section className="relative overflow-hidden">
                 <h1>
                     <div className="hidden">
                         カゲゴノミ
                     </div>
                 </h1>
-                <StaticImage
-                    src="../images/kagegonomi_mainvisual_temp.webp"
-                    alt="kagegonomi main visual"
-                    layout="fullWidth"
-                    loading="eager"
-                    placeholder="blurred"
-                    quality={90}
-                    className="w-full h-auto"
-                />
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-24 flex flex-row items-center">
+                <div className="block md:hidden w-full aspect-[9/20]">
                     <StaticImage
-                        src="../images/ikebukurofm.png"
-                        alt="ikebukurofm"
-                        layout="fixed"
+                        src="../images/kagegonomi_mainvisual_temp.webp"
+                        alt="kagegonomi main visual"
+                        layout="fullWidth"
                         loading="eager"
                         placeholder="blurred"
-                        height={40}
+                        quality={90}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            paddingBottom: 0,
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                        }}
+                        imgClassName="w-full h-full object-cover object-center"
                     />
+                </div>
+                <div className="hidden md:block">
                     <StaticImage
-                        src="../images/datetime.png"
-                        alt="datetime"
-                        layout="fixed"
+                        src="../images/kagegonomi_mainvisual_temp.webp"
+                        alt="kagegonomi main visual"
+                        layout="fullWidth"
                         loading="eager"
                         placeholder="blurred"
-                        height={40}
+                        quality={90}
+                        className="w-full h-auto"
                     />
+                </div>
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-24 max-md:mt-20">
+                    <div className="md:hidden flex flex-row items-center">
+                        <StaticImage
+                            src="../images/ikebukurofm.png"
+                            alt="ikebukurofm"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={22}
+                        />
+                        <StaticImage
+                            src="../images/datetime.png"
+                            alt="datetime"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={22}
+                        />
+                    </div>
+                    <div className="max-md:hidden flex flex-row items-center">
+                        <StaticImage
+                            src="../images/ikebukurofm.png"
+                            alt="ikebukurofm"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={40}
+                        />
+                        <StaticImage
+                            src="../images/datetime.png"
+                            alt="datetime"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={40}
+                        />
+                    </div>
                 </div>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-16">
-                    <StaticImage
-                        src="../images/title_kagegonomi.png"
-                        alt="kagegonomi title"
-                        layout="fixed"
-                        loading="eager"
-                        placeholder="blurred"
-                        height={160}
-                    />
-                </div>
-                <div className="absolute bottom-0 left-0 mb-20 ml-56">
-                    {isOnair ? (
-                        <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
-                            <StaticImage
-                                src="../images/onair.png"
-                                alt="onair"
-                                layout="fixed"
-                                loading="eager"
-                                placeholder="blurred"
-                                height={320}
-                                className="transition transform duration-300 hover:scale-110"
-                            />
-                        </a>
-                    ) : (
-                        <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
-                            <StaticImage
-                                src="../images/offair.png"
-                                alt="offair"
-                                layout="fixed"
-                                loading="eager"
-                                placeholder="blurred"
-                                height={320}
-                                className="transition transform duration-300 hover:scale-110"
-                            />
-                        </a>
-                    )}
-                </div>
-                <div className="absolute top-0 right-0 mt-36 mr-52">
-                    <a href="https://t.co/9lxTcR3Dp7" target="_blank" rel="noopener noreferrer">
+                    <div className="md:hidden">
                         <StaticImage
-                            src="../images/otayori.png"
-                            alt="otayori"
+                            src="../images/title_kagegonomi.png"
+                            alt="kagegonomi title"
                             layout="fixed"
                             loading="eager"
                             placeholder="blurred"
-                            height={180}
-                            className="transition transform duration-300 hover:scale-110"
+                            height={76}
                         />
-                    </a>
-                </div>
-                <div className="absolute bottom-0 right-0 mb-16 mr-72">
-                    <a href="https://x.com/kagegonomi" target="_blank" rel="noopener noreferrer">
+                    </div>
+                    <div className="max-md:hidden">
                         <StaticImage
-                            src="../images/x_logo.png"
-                            alt="x"
+                            src="../images/title_kagegonomi.png"
+                            alt="kagegonomi title"
                             layout="fixed"
                             loading="eager"
                             placeholder="blurred"
-                            height={120}
-                            className="transition transform duration-300 hover:scale-110"
+                            height={160}
                         />
-                    </a>
-                </div>
-            </section>
-            {/*WHAT'S NEW*/}
-            <section className="relative pt-24 pb-24" id="whats_new">
-                <h2 className="text-center mb-16">
-                    <StaticImage
-                        src="../images/head_whatsnew.png"
-                        alt="WHAT'S NEW | 新着情報"
-                        height={60}
-                        layout="fixed"
-                        className="block mx-auto"
-                    />
-                </h2>
-                <div className="w-[1080px] mx-auto">
-                    <div className="inset-0 flex items-center justify-center mb-10">
-                        <div className="w-full mx-auto">
-                            {data.allMicrocmsContents.edges.map((node) => (
-                                <Link
-                                    to={`/contents/${node.node.id}`}
-                                    key={node.node.id}
-                                    className="block p-4 border-b border-gray-300 hover:bg-gray-100 transition duration-300"
-                                >
-                                    <article key={node.node.id}>
-                                        <p className="text-blue-600 text-sm font-bold mb-2">{node.node.createdAt}</p>
-                                        <p className="text-base font-bold">{node.node.title}</p>
-                                    </article>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="text-right">
-                        <Link
-                            to={`/contents`}
-                            className="bottom-[2.5%] right-6 w-36 btn btn-outline"
-                        >
-                            MORE
-                        </Link>
                     </div>
                 </div>
-            </section>
-            {/*LATEST EPISODE*/}
-            <section className="h-[800px] pt-24 bg-[url('../images/bg_latest_episode.webp')] bg-no-repeat bg-center bg-fixed bg-cover" id="latest_episode">
-                <h2 className="text-center mb-16">
-                    <StaticImage
-                        src="../images/head_latestepisode.png"
-                        alt="LATEST EPISODE | 最新エピソード"
-                        height={60}
-                        layout="fixed"
-                        className="block mx-auto"
-                    />
-                </h2>
-                <div className="relative w-[960px] mx-auto">
-                    <div className="relative w-[800px] mx-auto">
-                        <iframe
-                            src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
-                            title="latest episode"
-                            width="100%"
-                            height="400"
-                            allowFullScreen
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"
-                        ></iframe>
+                <div className="absolute bottom-0 left-0">
+                    <div className="md:hidden mb-40 ml-4">
+                        {isOnair ? (
+                            <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                                <StaticImage
+                                    src="../images/onair.png"
+                                    alt="onair"
+                                    layout="fixed"
+                                    loading="eager"
+                                    placeholder="blurred"
+                                    height={180}
+                                    className="transition transform duration-300 hover:scale-110"
+                                />
+                            </a>
+                        ) : (
+                            <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                                <StaticImage
+                                    src="../images/offair.png"
+                                    alt="offair"
+                                    layout="fixed"
+                                    loading="eager"
+                                    placeholder="blurred"
+                                    height={180}
+                                    className="transition transform duration-300 hover:scale-110"
+                                />
+                            </a>
+                        )}
+                    </div>
+                    <div className="max-md:hidden mb-20 ml-56">
+                        {isOnair ? (
+                            <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                                <StaticImage
+                                    src="../images/onair.png"
+                                    alt="onair"
+                                    layout="fixed"
+                                    loading="eager"
+                                    placeholder="blurred"
+                                    height={320}
+                                    className="transition transform duration-300 hover:scale-110"
+                                />
+                            </a>
+                        ) : (
+                            <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                                <StaticImage
+                                    src="../images/offair.png"
+                                    alt="offair"
+                                    layout="fixed"
+                                    loading="eager"
+                                    placeholder="blurred"
+                                    height={320}
+                                    className="transition transform duration-300 hover:scale-110"
+                                />
+                            </a>
+                        )}
                     </div>
                 </div>
-            </section>
-            {/*ON-AIR NOTES*/}
-            <section className="relative pt-24 pb-24 bg-[#DCE6E2]" id="onair_notes">
-                <h2 className="text-center mb-16">
-                    <StaticImage
-                        src="../images/head_onairnotes.png"
-                        alt="ON-AIR NOTES | 放送メモ"
-                        height={60}
-                        layout="fixed"
-                        className="block mx-auto"
-                    />
-                </h2>
-                <div className="w-[1080px] mx-auto">
-
-                    <div className="table w-full pb-20">
-                        <div className="table-cell align-top w-1/2 pr-3">
-                            <iframe
-                                title="Media player"
-                                src="https://embed.music.apple.com/jp/playlist/%E3%82%AB%E3%82%B2%E3%82%B4%E3%83%8E%E3%83%9F%E3%81%AE%E6%B7%B1%E5%A4%9C%E9%9B%BB%E6%B3%A2-ed%E6%9B%B2-since2025-2-1/pl.u-e98lkq9heV826b?l=en-US&itscg=30200&itsct=music_box_player&ls=1&app=music&mttnsubad=pl.u-e98lkq9heV826b&theme=auto"
-                                id="embedPlayer"
-                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-                                allow="autoplay *; encrypted-media *; clipboard-write"
-                                style={{
-                                    border: "0px",
-                                    borderRadius: "12px",
-                                    width: "100%",
-                                    height: "450px",
-                                    maxWidth: "660px"
-                                }}
-                                height="450"
-                                width="100%"
-                            ></iframe>
-                        </div>
-                        <div className="table-cell align-top w-1/2 pl-3">
-                            <iframe
-                                className="note-embed"
-                                src="https://note.com/embed/notes/ncf0ac4bf869e"
-                                style={{
-                                    border: 0,
-                                    display: "block",
-                                    maxWidth: "99%",
-                                    width: "494px",
-                                    padding: "0px",
-                                    margin: "10px 0px",
-                                    position: "static",
-                                    visibility: "visible",
-                                }}
-                                height="400"
-                                title="Note embed"
-                            ></iframe>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div className="h-[600px] bg-[url('../images/bg1.jpg')] bg-no-repeat bg-center bg-fixed bg-cover"></div>
-            {/*ABOUT*/}
-            <section className="h-[800px] pt-24 bg-[url('../images/bg_about.webp')] bg-no-repeat bg-center bg-fixed bg-cover" id="about">
-                <h2 className="text-center mb-20">
-                    <StaticImage
-                        src="../images/head_about.png"
-                        alt="ABOUT | カゲゴノミとは"
-                        height={60}
-                        layout="fixed"
-                        className="block mx-auto"
-                    />
-                </h2>
-                <div className="relative w-[960px] mx-auto">
-                    <div>
-                        <p className="text-lg block pt-4 text-[#fff]">
-                            お前ら、年収はいくらだ？500万？ハッ笑わせるなぁ、これだから貧乏人との会話は止められないよ。たった500万じゃあ、幸せどころか不幸せも買えないんじゃないかぁ？光進丸の模型売ってやるからあっちいけよ。
-                        </p>
-                    </div>
-                </div>
-            </section>
-            {/*PARSONALITY*/}
-            <section className="relative pt-24 pb-20" id="parsonality">
-                <h2 className="text-center mb-16">
-                    <StaticImage
-                        src="../images/head_parsonality.png"
-                        alt="PARSONALITY | パーソナリティー"
-                        height={60}
-                        layout="fixed"
-                        className="block mx-auto"
-                    />
-                </h2>
-                <div className="relative w-[1280px] mx-auto">
-                    <div className="table w-full pb-20">
-                        <div className="table-cell align-top w-1/2">
+                <div className="absolute top-0 right-0">
+                    <div className="md:hidden mt-32 mr-4">
+                        <a href="https://t.co/9lxTcR3Dp7" target="_blank" rel="noopener noreferrer">
                             <StaticImage
-                                src="../images/pct_parsonality.jpg"
-                                alt="dj_asainingen"
-                                layout="fullWidth"
+                                src="../images/otayori.png"
+                                alt="otayori"
+                                layout="fixed"
+                                loading="eager"
                                 placeholder="blurred"
-                                className="w-full h-auto"
+                                height={110}
+                                className="transition transform duration-300 hover:scale-110"
                             />
-                        </div>
-                        <div className="table-cell align-top pl-16">
-                            <h3 className="block text-3xl mb-6 my-[1em] mx-0 font-bold">
-                                DJ浅い人間
-                            </h3>
-                            <div className="pr-24">
-                                <p className="text-lg block pt-3">
-                                    誰が登ってよいと言った？お前らの仕事はなあ、船底にこびり付いたフジツボの除去だ。息が続かなくなったら皆の邪魔にならないよう、そっと海底に沈め。
-                                </p>
-                            </div>
-                        </div>
+                        </a>
+                    </div>
+                    <div className="max-md:hidden mt-36 mr-52">
+                        <a href="https://t.co/9lxTcR3Dp7" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/otayori.png"
+                                alt="otayori"
+                                layout="fixed"
+                                loading="eager"
+                                placeholder="blurred"
+                                height={180}
+                                className="transition transform duration-300 hover:scale-110"
+                            />
+                        </a>
+                    </div>
+                </div>
+                <div className="absolute bottom-0 right-0">
+                    <div className="md:hidden mb-40 mr-4">
+                        <a href="https://x.com/kagegonomi" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/x_logo.png"
+                                alt="x"
+                                layout="fixed"
+                                loading="eager"
+                                placeholder="blurred"
+                                height={60}
+                                className="transition transform duration-300 hover:scale-110"
+                            />
+                        </a>
+                    </div>
+                    <div className="max-md:hidden mb-16 mr-72">
+                        <a href="https://x.com/kagegonomi" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/x_logo.png"
+                                alt="x"
+                                layout="fixed"
+                                loading="eager"
+                                placeholder="blurred"
+                                height={80}
+                                className="transition transform duration-300 hover:scale-110"
+                            />
+                        </a>
                     </div>
                 </div>
             </section>
