@@ -285,6 +285,44 @@ const IndexPage = ({ data }) => {
                     </div>
                 </div>
             </section>
+            {/*LATEST EPISODE*/}
+            <section className="h-[860px] max-md:h-[420px] pt-24 max-md:pt-12 bg-[url('../images/bg_latest_episode.webp')] bg-no-repeat bg-center bg-fixed bg-cover overflow-hidden" id="latest_episode">
+                <h2 className="text-center mb-16 max-md:mb-10">
+                    <StaticImage
+                        src="../images/head_latestepisode.png"
+                        alt="LATEST EPISODE | 最新エピソード"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
+                    />
+                </h2>
+                <div className="relative w-5xl max-md:w-[90%] mx-auto">
+                    <div className="md:hidden relative w-[800px] max-md:w-[90%] mx-auto">
+                        <iframe
+                            src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
+                            title="latest episode"
+                            width="100%"
+                            height="172"
+                            allowFullScreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+                <div className="relative w-5xl max-md:w-[90%] mx-auto">
+                    <div className="max-md:hidden relative w-[800px] max-md:w-[90%] mx-auto">
+                        <iframe
+                            src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
+                            title="latest episode"
+                            width="100%"
+                            height="460"
+                            allowFullScreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
         </Layout>
     )
 }
