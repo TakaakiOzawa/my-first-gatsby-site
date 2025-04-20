@@ -247,6 +247,44 @@ const IndexPage = ({ data }) => {
                     </div>
                 </div>
             </section>
+            {/*WHAT'S NEW*/}
+            <section className="relative overflow-hidden pt-24 pb-24 max-md:pt-12 max-md:pb-12" id="whats_new">
+                <h2 className="text-center mb-6">
+                    <StaticImage
+                        src="../images/head_whatsnew.png"
+                        alt="WHAT'S NEW | 新着情報"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
+                    />
+                </h2>
+                <div className="max-w-5xl max-md:w-[85%] mx-auto">
+                    <div className="inset-0 flex items-center justify-center mb-10 max-md:mb-6">
+                        <div className="w-full mx-auto">
+                            {data.allMicrocmsContents.edges.map((node) => (
+                                <Link
+                                    to={`/contents/${node.node.id}`}
+                                    key={node.node.id}
+                                    className="block p-4 border-b border-gray-300 hover:bg-gray-100 transition duration-300"
+                                >
+                                    <article key={node.node.id}>
+                                        <p className="text-blue-600 text-sm font-bold mb-2">{node.node.createdAt}</p>
+                                        <p className="text-base max-md:text-sm font-bold">{node.node.title}</p>
+                                    </article>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="text-right">
+                        <Link
+                            to={`/contents`}
+                            className="bottom-[2.5%] right-6 w-36 btn btn-outline"
+                        >
+                            MORE
+                        </Link>
+                    </div>
+                </div>
+            </section>
         </Layout>
     )
 }
