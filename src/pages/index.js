@@ -424,6 +424,25 @@ const IndexPage = ({ data }) => {
                 />
             </div>
             <div className="max-md:hidden h-[600px] bg-[url('../images/bg1.jpg')] bg-no-repeat bg-center bg-fixed bg-cover"></div>
+            {/*ABOUT*/}
+            <section className="h-[800px] max-md:h-[600px] pt-24 max-md:pt-12 bg-[url('../images/bg_about.webp')] bg-no-repeat bg-center bg-fixed bg-cover overflow-hidden" id="about">
+                <h2 className="text-center mb-16 max-md:mb-10">
+                    <StaticImage
+                        src="../images/head_about.png"
+                        alt="ABOUT | カゲゴノミとは"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
+                    />
+                </h2>
+                <div className="relative w-[50%] max-md:w-[90%] mx-auto">
+                    <div>
+                        <p className="text-lg max-md:text-base block pt-4 text-[#fff]">
+                            お前ら、年収はいくらだ？500万？ハッ笑わせるなぁ、これだから貧乏人との会話は止められないよ。たった500万じゃあ、幸せどころか不幸せも買えないんじゃないかぁ？光進丸の模型売ってやるからあっちいけよ。
+                        </p>
+                    </div>
+                </div>
+            </section>
         </Layout>
     )
 }
