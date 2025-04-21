@@ -412,6 +412,18 @@ const IndexPage = ({ data }) => {
                     </div>
                 </div>
             </section>
+            {/*ashirai*/}
+            <div className="md:hidden">
+                <StaticImage
+                    src="../images/bg1.jpg"
+                    alt="bg1"
+                    layout="fullWidth"
+                    placeholder="blurred"
+                    quality={90}
+                    className="w-full h-auto"
+                />
+            </div>
+            <div className="max-md:hidden h-[600px] bg-[url('../images/bg1.jpg')] bg-no-repeat bg-center bg-fixed bg-cover"></div>
         </Layout>
     )
 }
