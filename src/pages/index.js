@@ -334,7 +334,7 @@ const IndexPage = ({ data }) => {
                         className="block mx-auto"
                     />
                 </h2>
-                <div className="w-[1080px] max-md:w-[90%] mx-auto">
+                <div className="w-[60%] max-md:w-[90%] mx-auto">
                     <div className="md:hidden block w-full">
                         <div className="pb-3">
                             <iframe
