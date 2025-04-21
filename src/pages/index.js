@@ -437,9 +437,63 @@ const IndexPage = ({ data }) => {
                 </h2>
                 <div className="relative w-[50%] max-md:w-[90%] mx-auto">
                     <div>
-                        <p className="text-lg max-md:text-base block pt-4 text-[#fff]">
+                        <p className="text-lg max-md:text-base block pt-4 max-md:pt-0 text-[#fff]">
                             お前ら、年収はいくらだ？500万？ハッ笑わせるなぁ、これだから貧乏人との会話は止められないよ。たった500万じゃあ、幸せどころか不幸せも買えないんじゃないかぁ？光進丸の模型売ってやるからあっちいけよ。
                         </p>
+                    </div>
+                </div>
+            </section>
+            {/*PARSONALITY*/}
+            <section className="relative pt-24 pb-20 max-md:pt-12 max-md:pb-12 overflow-hidden" id="parsonality">
+                <h2 className="text-center mb-16 max-md:mb-10">
+                    <StaticImage
+                        src="../images/head_parsonality.png"
+                        alt="PARSONALITY | パーソナリティー"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
+                    />
+                </h2>
+                <div className="w-[60%] max-md:w-[90%] mx-auto">
+                    <div className="md:hidden block w-full">
+                        <StaticImage
+                            src="../images/pct_parsonality.jpg"
+                            alt="dj_asainingen"
+                            layout="fullWidth"
+                            placeholder="blurred"
+                            className="w-full h-auto"
+                        />
+                        <div>
+                            <h3 className="block text-xl mt-4 mx-0 font-bold">
+                                DJ浅い人間
+                            </h3>
+                            <p className="text-sm block pt-3">
+                                誰が登ってよいと言った？お前らの仕事はなあ、船底にこびり付いたフジツボの除去だ。息が続かなくなったら皆の邪魔にならないよう、そっと海底に沈め。
+                            </p>
+                        </div>
+                    </div>
+                    <div className="relative max-md:hidden table mx-auto pb-20">
+                        <div className="table w-full pb-20">
+                            <div className="table-cell align-top w-1/2">
+                                <StaticImage
+                                    src="../images/pct_parsonality.jpg"
+                                    alt="dj_asainingen"
+                                    layout="fullWidth"
+                                    placeholder="blurred"
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                            <div className="table-cell align-top pl-16">
+                                <h3 className="block text-3xl mb-6 my-[1em] mx-0 font-bold">
+                                    DJ浅い人間
+                                </h3>
+                                <div className="pr-24">
+                                    <p className="text-lg block pt-3">
+                                        誰が登ってよいと言った？お前らの仕事はなあ、船底にこびり付いたフジツボの除去だ。息が続かなくなったら皆の邪魔にならないよう、そっと海底に沈め。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
