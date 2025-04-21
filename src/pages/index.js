@@ -323,6 +323,95 @@ const IndexPage = ({ data }) => {
                     </div>
                 </div>
             </section>
+            {/*ON-AIR NOTES*/}
+            <section className="relative pt-24 pb-24 max-md:pt-12 max-md:pb-12 bg-[#DCE6E2] overflow-hidden" id="onair_notes">
+                <h2 className="text-center mb-16 max-md:mb-10">
+                    <StaticImage
+                        src="../images/head_onairnotes.png"
+                        alt="ON-AIR NOTES | 放送メモ"
+                        height={60}
+                        layout="fixed"
+                        className="block mx-auto"
+                    />
+                </h2>
+                <div className="w-[1080px] max-md:w-[90%] mx-auto">
+                    <div className="md:hidden block w-full">
+                        <div className="pb-3">
+                            <iframe
+                                title="Media player"
+                                src="https://embed.music.apple.com/jp/playlist/%E3%82%AB%E3%82%B2%E3%82%B4%E3%83%8E%E3%83%9F%E3%81%AE%E6%B7%B1%E5%A4%9C%E9%9B%BB%E6%B3%A2-ed%E6%9B%B2-since2025-2-1/pl.u-e98lkq9heV826b?l=en-US&itscg=30200&itsct=music_box_player&ls=1&app=music&mttnsubad=pl.u-e98lkq9heV826b&theme=auto"
+                                id="embedPlayer"
+                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                allow="autoplay *; encrypted-media *; clipboard-write"
+                                style={{
+                                    border: "0px",
+                                    borderRadius: "12px",
+                                    width: "100%",
+                                    height: "450px"
+                                }}
+                                height="450"
+                                width="100%"
+                            ></iframe>
+                        </div>
+                        <div>
+                            <iframe
+                                className="note-embed"
+                                src="https://note.com/embed/notes/ncf0ac4bf869e"
+                                style={{
+                                    border: 0,
+                                    display: "block",
+                                    maxWidth: "99%",
+                                    width: "99%",
+                                    height: "200px",
+                                    padding: "0px",
+                                    margin: "10px 0px",
+                                    position: "static",
+                                    visibility: "visible",
+                                }}
+                                title="Note embed"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div className="max-md:hidden table w-full pb-20">
+                        <div className="table-cell align-top w-1/2 pr-3">
+                            <iframe
+                                title="Media player"
+                                src="https://embed.music.apple.com/jp/playlist/%E3%82%AB%E3%82%B2%E3%82%B4%E3%83%8E%E3%83%9F%E3%81%AE%E6%B7%B1%E5%A4%9C%E9%9B%BB%E6%B3%A2-ed%E6%9B%B2-since2025-2-1/pl.u-e98lkq9heV826b?l=en-US&itscg=30200&itsct=music_box_player&ls=1&app=music&mttnsubad=pl.u-e98lkq9heV826b&theme=auto"
+                                id="embedPlayer"
+                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                allow="autoplay *; encrypted-media *; clipboard-write"
+                                style={{
+                                    border: "0px",
+                                    borderRadius: "12px",
+                                    width: "100%",
+                                    height: "450px",
+                                    maxWidth: "660px"
+                                }}
+                                height="450"
+                                width="100%"
+                            ></iframe>
+                        </div>
+                        <div className="table-cell align-top w-1/2 pl-3">
+                            <iframe
+                                className="note-embed"
+                                src="https://note.com/embed/notes/ncf0ac4bf869e"
+                                style={{
+                                    border: 0,
+                                    display: "block",
+                                    maxWidth: "99%",
+                                    width: "99%",
+                                    height: "400px",
+                                    padding: "0px",
+                                    margin: "10px 0px",
+                                    position: "static",
+                                    visibility: "visible",
+                                }}
+                                title="Note embed"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </Layout>
     )
 }
