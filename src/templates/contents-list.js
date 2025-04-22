@@ -111,6 +111,8 @@ export const query = graphql`
     }
 `;
 
-export const Head = () => <Seo title="WHAT'S NEW" />
+export const Head = () => (
+    <Seo title="WHAT'S NEW | カゲゴノミ" />
+)
 
 export default ContentsList;

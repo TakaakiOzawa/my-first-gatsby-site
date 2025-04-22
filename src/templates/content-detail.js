@@ -50,7 +50,7 @@ export const query = graphql`
 
 export const Head = ({ data }) => {
     const { title } = data.microcmsContents;
-    return <Seo title={title} />;
+    return <Seo title={title + " | カゲゴノミ"} />;
 };
 
 export default ContentDetail;

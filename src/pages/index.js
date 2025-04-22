@@ -519,6 +519,8 @@ export const query = graphql`
     }
 `
 
-export const Head = () => <Seo title="TOP" />
+export const Head = () => (
+    <Seo title="カゲゴノミ" />
+)
 
 export default IndexPage
