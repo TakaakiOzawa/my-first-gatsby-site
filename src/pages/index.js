@@ -38,106 +38,218 @@ const IndexPage = ({ data }) => {
     return (
         <Layout pageTitle="Index">
             {/*MAIN VISUAL*/}
-            <section className="relative">
+            <section className="relative overflow-hidden">
                 <h1>
                     <div className="hidden">
                         カゲゴノミ
                     </div>
                 </h1>
-                <StaticImage
-                    src="../images/kagegonomi_mainvisual_temp.webp"
-                    alt="kagegonomi main visual"
-                    layout="fullWidth"
-                    loading="eager"
-                    placeholder="blurred"
-                    quality={90}
-                    className="w-full h-auto"
-                />
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-24 flex flex-row items-center">
+                <div className="block md:hidden w-full aspect-[9/20]">
                     <StaticImage
-                        src="../images/ikebukurofm.png"
-                        alt="ikebukurofm"
-                        layout="fixed"
+                        src="../images/kagegonomi_mainvisual_temp.webp"
+                        alt="kagegonomi main visual"
+                        layout="fullWidth"
                         loading="eager"
                         placeholder="blurred"
-                        height={40}
+                        quality={90}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            paddingBottom: 0,
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                        }}
+                        imgClassName="w-full h-full object-cover object-center"
                     />
+                </div>
+                <div className="hidden md:block">
                     <StaticImage
-                        src="../images/datetime.png"
-                        alt="datetime"
-                        layout="fixed"
+                        src="../images/kagegonomi_mainvisual_temp.webp"
+                        alt="kagegonomi main visual"
+                        layout="fullWidth"
                         loading="eager"
                         placeholder="blurred"
-                        height={40}
+                        quality={90}
+                        className="w-full h-auto"
                     />
+                </div>
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-24 max-md:mt-20">
+                    <div className="md:hidden flex flex-row items-center">
+                        <StaticImage
+                            src="../images/ikebukurofm.png"
+                            alt="ikebukurofm"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={22}
+                        />
+                        <StaticImage
+                            src="../images/datetime.png"
+                            alt="datetime"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={22}
+                        />
+                    </div>
+                    <div className="max-md:hidden flex flex-row items-center">
+                        <StaticImage
+                            src="../images/ikebukurofm.png"
+                            alt="ikebukurofm"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={40}
+                        />
+                        <StaticImage
+                            src="../images/datetime.png"
+                            alt="datetime"
+                            layout="fixed"
+                            loading="eager"
+                            placeholder="blurred"
+                            height={40}
+                        />
+                    </div>
                 </div>
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-16">
-                    <StaticImage
-                        src="../images/title_kagegonomi.png"
-                        alt="kagegonomi title"
-                        layout="fixed"
-                        loading="eager"
-                        placeholder="blurred"
-                        height={160}
-                    />
-                </div>
-                <div className="absolute bottom-0 left-0 mb-20 ml-56">
-                    {isOnair ? (
-                        <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
-                            <StaticImage
-                                src="../images/onair.png"
-                                alt="onair"
-                                layout="fixed"
-                                loading="eager"
-                                placeholder="blurred"
-                                height={320}
-                                className="transition transform duration-300 hover:scale-110"
-                            />
-                        </a>
-                    ) : (
-                        <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
-                            <StaticImage
-                                src="../images/offair.png"
-                                alt="offair"
-                                layout="fixed"
-                                loading="eager"
-                                placeholder="blurred"
-                                height={320}
-                                className="transition transform duration-300 hover:scale-110"
-                            />
-                        </a>
-                    )}
-                </div>
-                <div className="absolute top-0 right-0 mt-36 mr-52">
-                    <a href="https://t.co/9lxTcR3Dp7" target="_blank" rel="noopener noreferrer">
+                    <div className="md:hidden">
                         <StaticImage
-                            src="../images/otayori.png"
-                            alt="otayori"
+                            src="../images/title_kagegonomi.png"
+                            alt="kagegonomi title"
                             layout="fixed"
                             loading="eager"
                             placeholder="blurred"
-                            height={180}
-                            className="transition transform duration-300 hover:scale-110"
+                            height={76}
                         />
-                    </a>
-                </div>
-                <div className="absolute bottom-0 right-0 mb-16 mr-72">
-                    <a href="https://x.com/kagegonomi" target="_blank" rel="noopener noreferrer">
+                    </div>
+                    <div className="max-md:hidden">
                         <StaticImage
-                            src="../images/x_logo.png"
-                            alt="x"
+                            src="../images/title_kagegonomi.png"
+                            alt="kagegonomi title"
                             layout="fixed"
                             loading="eager"
                             placeholder="blurred"
-                            height={120}
-                            className="transition transform duration-300 hover:scale-110"
+                            height={160}
                         />
-                    </a>
+                    </div>
+                </div>
+                <div className="absolute bottom-0 left-0">
+                    <div className="md:hidden mb-40 ml-4">
+                        {isOnair ? (
+                            <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                                <StaticImage
+                                    src="../images/onair.png"
+                                    alt="onair"
+                                    layout="fixed"
+                                    loading="eager"
+                                    placeholder="blurred"
+                                    height={180}
+                                    className="transition transform duration-300 hover:scale-110"
+                                />
+                            </a>
+                        ) : (
+                            <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                                <StaticImage
+                                    src="../images/offair.png"
+                                    alt="offair"
+                                    layout="fixed"
+                                    loading="eager"
+                                    placeholder="blurred"
+                                    height={180}
+                                    className="transition transform duration-300 hover:scale-110"
+                                />
+                            </a>
+                        )}
+                    </div>
+                    <div className="max-md:hidden mb-20 ml-56">
+                        {isOnair ? (
+                            <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                                <StaticImage
+                                    src="../images/onair.png"
+                                    alt="onair"
+                                    layout="fixed"
+                                    loading="eager"
+                                    placeholder="blurred"
+                                    height={320}
+                                    className="transition transform duration-300 hover:scale-110"
+                                />
+                            </a>
+                        ) : (
+                            <a href="http://ikebukurofm.com/concept.html" target="_blank" rel="noopener noreferrer">
+                                <StaticImage
+                                    src="../images/offair.png"
+                                    alt="offair"
+                                    layout="fixed"
+                                    loading="eager"
+                                    placeholder="blurred"
+                                    height={320}
+                                    className="transition transform duration-300 hover:scale-110"
+                                />
+                            </a>
+                        )}
+                    </div>
+                </div>
+                <div className="absolute top-0 right-0">
+                    <div className="md:hidden mt-32 mr-4">
+                        <a href="https://t.co/9lxTcR3Dp7" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/otayori.png"
+                                alt="otayori"
+                                layout="fixed"
+                                loading="eager"
+                                placeholder="blurred"
+                                height={110}
+                                className="transition transform duration-300 hover:scale-110"
+                            />
+                        </a>
+                    </div>
+                    <div className="max-md:hidden mt-36 mr-52">
+                        <a href="https://t.co/9lxTcR3Dp7" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/otayori.png"
+                                alt="otayori"
+                                layout="fixed"
+                                loading="eager"
+                                placeholder="blurred"
+                                height={180}
+                                className="transition transform duration-300 hover:scale-110"
+                            />
+                        </a>
+                    </div>
+                </div>
+                <div className="absolute bottom-0 right-0">
+                    <div className="md:hidden mb-40 mr-4">
+                        <a href="https://x.com/kagegonomi" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/x_logo.png"
+                                alt="x"
+                                layout="fixed"
+                                loading="eager"
+                                placeholder="blurred"
+                                height={60}
+                                className="transition transform duration-300 hover:scale-110"
+                            />
+                        </a>
+                    </div>
+                    <div className="max-md:hidden mb-16 mr-72">
+                        <a href="https://x.com/kagegonomi" target="_blank" rel="noopener noreferrer">
+                            <StaticImage
+                                src="../images/x_logo.png"
+                                alt="x"
+                                layout="fixed"
+                                loading="eager"
+                                placeholder="blurred"
+                                height={80}
+                                className="transition transform duration-300 hover:scale-110"
+                            />
+                        </a>
+                    </div>
                 </div>
             </section>
             {/*WHAT'S NEW*/}
-            <section className="relative pt-24 pb-24" id="whats_new">
-                <h2 className="text-center mb-16">
+            <section className="relative overflow-hidden pt-24 pb-24 max-md:pt-12 max-md:pb-12" id="whats_new">
+                <h2 className="text-center mb-6">
                     <StaticImage
                         src="../images/head_whatsnew.png"
                         alt="WHAT'S NEW | 新着情報"
@@ -146,8 +258,8 @@ const IndexPage = ({ data }) => {
                         className="block mx-auto"
                     />
                 </h2>
-                <div className="w-[1080px] mx-auto">
-                    <div className="inset-0 flex items-center justify-center mb-10">
+                <div className="max-w-5xl max-md:w-[85%] mx-auto">
+                    <div className="inset-0 flex items-center justify-center mb-10 max-md:mb-6">
                         <div className="w-full mx-auto">
                             {data.allMicrocmsContents.edges.map((node) => (
                                 <Link
@@ -157,7 +269,7 @@ const IndexPage = ({ data }) => {
                                 >
                                     <article key={node.node.id}>
                                         <p className="text-blue-600 text-sm font-bold mb-2">{node.node.createdAt}</p>
-                                        <p className="text-base font-bold">{node.node.title}</p>
+                                        <p className="text-base max-md:text-sm font-bold">{node.node.title}</p>
                                     </article>
                                 </Link>
                             ))}
@@ -174,8 +286,8 @@ const IndexPage = ({ data }) => {
                 </div>
             </section>
             {/*LATEST EPISODE*/}
-            <section className="h-[800px] pt-24 bg-[url('../images/bg_latest_episode.webp')] bg-no-repeat bg-center bg-fixed bg-cover" id="latest_episode">
-                <h2 className="text-center mb-16">
+            <section className="h-[860px] max-md:h-[420px] pt-24 max-md:pt-12 bg-[url('../images/bg_latest_episode.webp')] bg-no-repeat bg-center bg-fixed bg-cover overflow-hidden" id="latest_episode">
+                <h2 className="text-center mb-16 max-md:mb-10">
                     <StaticImage
                         src="../images/head_latestepisode.png"
                         alt="LATEST EPISODE | 最新エピソード"
@@ -184,13 +296,26 @@ const IndexPage = ({ data }) => {
                         className="block mx-auto"
                     />
                 </h2>
-                <div className="relative w-[960px] mx-auto">
-                    <div className="relative w-[800px] mx-auto">
+                <div className="relative w-5xl max-md:w-[90%] mx-auto">
+                    <div className="md:hidden relative w-[800px] max-md:w-[90%] mx-auto">
                         <iframe
                             src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
                             title="latest episode"
                             width="100%"
-                            height="400"
+                            height="172"
+                            allowFullScreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+                <div className="relative w-5xl max-md:w-[90%] mx-auto">
+                    <div className="max-md:hidden relative w-[800px] max-md:w-[90%] mx-auto">
+                        <iframe
+                            src="https://www.youtube.com/embed/?list=UUQ11o0iwgUQ84MHMQtftoJQ"
+                            title="latest episode"
+                            width="100%"
+                            height="460"
                             allowFullScreen
                             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                             loading="lazy"
@@ -199,8 +324,8 @@ const IndexPage = ({ data }) => {
                 </div>
             </section>
             {/*ON-AIR NOTES*/}
-            <section className="relative pt-24 pb-24 bg-[#DCE6E2]" id="onair_notes">
-                <h2 className="text-center mb-16">
+            <section className="relative pt-24 pb-24 max-md:pt-12 max-md:pb-12 bg-[#DCE6E2] overflow-hidden" id="onair_notes">
+                <h2 className="text-center mb-16 max-md:mb-10">
                     <StaticImage
                         src="../images/head_onairnotes.png"
                         alt="ON-AIR NOTES | 放送メモ"
@@ -209,9 +334,45 @@ const IndexPage = ({ data }) => {
                         className="block mx-auto"
                     />
                 </h2>
-                <div className="w-[1080px] mx-auto">
-
-                    <div className="table w-full pb-20">
+                <div className="w-[60%] max-md:w-[90%] mx-auto">
+                    <div className="md:hidden block w-full">
+                        <div className="pb-3">
+                            <iframe
+                                title="Media player"
+                                src="https://embed.music.apple.com/jp/playlist/%E3%82%AB%E3%82%B2%E3%82%B4%E3%83%8E%E3%83%9F%E3%81%AE%E6%B7%B1%E5%A4%9C%E9%9B%BB%E6%B3%A2-ed%E6%9B%B2-since2025-2-1/pl.u-e98lkq9heV826b?l=en-US&itscg=30200&itsct=music_box_player&ls=1&app=music&mttnsubad=pl.u-e98lkq9heV826b&theme=auto"
+                                id="embedPlayer"
+                                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                                allow="autoplay *; encrypted-media *; clipboard-write"
+                                style={{
+                                    border: "0px",
+                                    borderRadius: "12px",
+                                    width: "100%",
+                                    height: "450px"
+                                }}
+                                height="450"
+                                width="100%"
+                            ></iframe>
+                        </div>
+                        <div>
+                            <iframe
+                                className="note-embed"
+                                src="https://note.com/embed/notes/ncf0ac4bf869e"
+                                style={{
+                                    border: 0,
+                                    display: "block",
+                                    maxWidth: "99%",
+                                    width: "99%",
+                                    height: "200px",
+                                    padding: "0px",
+                                    margin: "10px 0px",
+                                    position: "static",
+                                    visibility: "visible",
+                                }}
+                                title="Note embed"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div className="max-md:hidden table w-full pb-20">
                         <div className="table-cell align-top w-1/2 pr-3">
                             <iframe
                                 title="Media player"
@@ -238,23 +399,34 @@ const IndexPage = ({ data }) => {
                                     border: 0,
                                     display: "block",
                                     maxWidth: "99%",
-                                    width: "494px",
+                                    width: "99%",
+                                    height: "400px",
                                     padding: "0px",
                                     margin: "10px 0px",
                                     position: "static",
                                     visibility: "visible",
                                 }}
-                                height="400"
                                 title="Note embed"
                             ></iframe>
                         </div>
                     </div>
                 </div>
             </section>
-            <div className="h-[600px] bg-[url('../images/bg1.jpg')] bg-no-repeat bg-center bg-fixed bg-cover"></div>
+            {/*ashirai*/}
+            <div className="md:hidden">
+                <StaticImage
+                    src="../images/bg1.jpg"
+                    alt="bg1"
+                    layout="fullWidth"
+                    placeholder="blurred"
+                    quality={90}
+                    className="w-full h-auto"
+                />
+            </div>
+            <div className="max-md:hidden h-[600px] bg-[url('../images/bg1.jpg')] bg-no-repeat bg-center bg-fixed bg-cover"></div>
             {/*ABOUT*/}
-            <section className="h-[800px] pt-24 bg-[url('../images/bg_about.webp')] bg-no-repeat bg-center bg-fixed bg-cover" id="about">
-                <h2 className="text-center mb-20">
+            <section className="h-[800px] max-md:h-[600px] pt-24 max-md:pt-12 bg-[url('../images/bg_about.webp')] bg-no-repeat bg-center bg-fixed bg-cover overflow-hidden" id="about">
+                <h2 className="text-center mb-16 max-md:mb-10">
                     <StaticImage
                         src="../images/head_about.png"
                         alt="ABOUT | カゲゴノミとは"
@@ -263,17 +435,17 @@ const IndexPage = ({ data }) => {
                         className="block mx-auto"
                     />
                 </h2>
-                <div className="relative w-[960px] mx-auto">
+                <div className="relative w-[50%] max-md:w-[90%] mx-auto">
                     <div>
-                        <p className="text-lg block pt-4 text-[#fff]">
+                        <p className="text-lg max-md:text-base block pt-4 max-md:pt-0 text-[#fff]">
                             お前ら、年収はいくらだ？500万？ハッ笑わせるなぁ、これだから貧乏人との会話は止められないよ。たった500万じゃあ、幸せどころか不幸せも買えないんじゃないかぁ？光進丸の模型売ってやるからあっちいけよ。
                         </p>
                     </div>
                 </div>
             </section>
             {/*PARSONALITY*/}
-            <section className="relative pt-24 pb-20" id="parsonality">
-                <h2 className="text-center mb-16">
+            <section className="relative pt-24 pb-20 max-md:pt-12 max-md:pb-12 overflow-hidden" id="parsonality">
+                <h2 className="text-center mb-16 max-md:mb-10">
                     <StaticImage
                         src="../images/head_parsonality.png"
                         alt="PARSONALITY | パーソナリティー"
@@ -282,25 +454,44 @@ const IndexPage = ({ data }) => {
                         className="block mx-auto"
                     />
                 </h2>
-                <div className="relative w-[1280px] mx-auto">
-                    <div className="table w-full pb-20">
-                        <div className="table-cell align-top w-1/2">
-                            <StaticImage
-                                src="../images/pct_parsonality.jpg"
-                                alt="dj_asainingen"
-                                layout="fullWidth"
-                                placeholder="blurred"
-                                className="w-full h-auto"
-                            />
-                        </div>
-                        <div className="table-cell align-top pl-16">
-                            <h3 className="block text-3xl mb-6 my-[1em] mx-0 font-bold">
+                <div className="w-[60%] max-md:w-[90%] mx-auto">
+                    <div className="md:hidden block w-full">
+                        <StaticImage
+                            src="../images/pct_parsonality.jpg"
+                            alt="dj_asainingen"
+                            layout="fullWidth"
+                            placeholder="blurred"
+                            className="w-full h-auto"
+                        />
+                        <div>
+                            <h3 className="block text-xl mt-4 mx-0 font-bold">
                                 DJ浅い人間
                             </h3>
-                            <div className="pr-24">
-                                <p className="text-lg block pt-3">
-                                    誰が登ってよいと言った？お前らの仕事はなあ、船底にこびり付いたフジツボの除去だ。息が続かなくなったら皆の邪魔にならないよう、そっと海底に沈め。
-                                </p>
+                            <p className="text-sm block pt-3">
+                                誰が登ってよいと言った？お前らの仕事はなあ、船底にこびり付いたフジツボの除去だ。息が続かなくなったら皆の邪魔にならないよう、そっと海底に沈め。
+                            </p>
+                        </div>
+                    </div>
+                    <div className="relative max-md:hidden table mx-auto pb-20">
+                        <div className="table w-full pb-20">
+                            <div className="table-cell align-top w-1/2">
+                                <StaticImage
+                                    src="../images/pct_parsonality.jpg"
+                                    alt="dj_asainingen"
+                                    layout="fullWidth"
+                                    placeholder="blurred"
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                            <div className="table-cell align-top pl-16">
+                                <h3 className="block text-3xl mb-6 my-[1em] mx-0 font-bold">
+                                    DJ浅い人間
+                                </h3>
+                                <div className="pr-24">
+                                    <p className="text-lg block pt-3">
+                                        誰が登ってよいと言った？お前らの仕事はなあ、船底にこびり付いたフジツボの除去だ。息が続かなくなったら皆の邪魔にならないよう、そっと海底に沈め。
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -328,6 +519,8 @@ export const query = graphql`
     }
 `
 
-export const Head = () => <Seo title="TOP" />
+export const Head = () => (
+    <Seo title="カゲゴノミ" />
+)
 
 export default IndexPage
